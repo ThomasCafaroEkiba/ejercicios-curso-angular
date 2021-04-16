@@ -1,0 +1,28 @@
+<div class="crear-post">
+  <form class="crear-post-form">
+    <h3>Crear post</h3>
+    <div class="form-field">
+      <label for="title">Título</label>
+      <input type="text" name="title" [(ngModel)]="nuevoPost.title" />
+    </div>
+    <div class="form-field">
+      <label for="body">Cuerpo</label>
+      <textarea name="body" [(ngModel)]="nuevoPost.body"></textarea>
+    </div>
+  </form>
+  <button (click)="crearPost()">Crear Post</button>
+</div>
+<div class="post" *ngFor="let post of posts" (click)="abrirPost(post)">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+  <i>Post número {{ post.id }} por el usuario {{ post.userId }} </i>
+  <hr />
+  <div class="post__comments" *ngFor="let comment of post.comments">
+    <i>{{ comment.email }}</i>
+    <p>
+      <strong>{{ comment.name }}</strong>
+    </p>
+    <pre>{{ comment.body }}</pre>
+    <hr />
+  </div>
+</div>
