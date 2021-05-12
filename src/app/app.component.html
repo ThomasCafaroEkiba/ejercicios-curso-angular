@@ -1,0 +1,25 @@
+<h1>{{ title }}</h1>
+
+<h2>Ejercicios 1 a 15</h2>
+
+<input type="text" [(ngModel)]="textoInput" />
+<p>{{ textoInput }}</p>
+
+<button (click)="mostrarTexto()">Púlsame</button>
+
+<p>{{ textoBotonPulsado }}</p>
+
+<p *ngIf="botonPulsado">Estoy oculto</p>
+
+<label for="tareas">Tareas</label>
+<input type="text" name="tareas" [(ngModel)]="tareaPendienteDeAnadir" />
+
+<button (click)="anadirTareaALaLista()">Añadir a la lista</button>
+
+<ul>
+  <li *ngFor="let tarea of tareas">{{ tarea }}</li>
+</ul>
+
+<h2>Ejercicios 16 a 19</h2>
+
+<router-outlet></router-outlet>

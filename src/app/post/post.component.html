@@ -1,0 +1,17 @@
+<button routerLink="">Volver a lista de posts</button>
+
+<h1>Detalle del Post</h1>
+<div class="post">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+  <i>Post número {{ post.id }} por el usuario {{ post.userId }} </i>
+  <hr />
+  <div class="post__comments" *ngFor="let comment of post.comments">
+    <i>{{ comment.email }}</i>
+    <p>
+      <strong>{{ comment.name }}</strong>
+    </p>
+    <pre>{{ comment.body }}</pre>
+    <hr />
+  </div>
+</div>
